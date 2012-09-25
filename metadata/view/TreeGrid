@@ -1,0 +1,86 @@
+{
+    "type": "treepanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TreeGrid",
+        "designer|userAlias": "treegrid",
+        "requires": [
+            "Four59Cool.ux.InlineAnything"
+        ],
+        "height": 250,
+        "width": 400,
+        "title": "My Tree Grid Panel",
+        "store": "MyJsonTreeStore",
+        "rootVisible": null
+    },
+    "id": "ExtBox1-ext-gen3131",
+    "designerId": "c8a65774-25d3-4c05-a26c-68b6c0a65bdf",
+    "iconCls": "icon-treegridpanel",
+    "cn": [
+        {
+            "type": "treeview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTreeView",
+                "rootVisible": false
+            },
+            "configAlternates": {
+                "toggleOnDblClick": "boolean"
+            },
+            "designerId": "07377538-4470-46da-b7e1-33e965d2b33d"
+        },
+        {
+            "type": "treecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTreeColumn",
+                "dataIndex": "name",
+                "flex": 1,
+                "text": "Name"
+            },
+            "designerId": "3ecf091a-08ea-4e66-bd35-203b4babaf0a"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn",
+                "dataIndex": "age",
+                "flex": null,
+                "text": "Age"
+            },
+            "designerId": "b6c8c459-8f77-412c-9014-c2d8fd56c067"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn1",
+                "dataIndex": "name",
+                "flex": 1,
+                "text": "MyColumn1"
+            },
+            "designerId": "4dd1402e-45c5-4a72-accb-3d0e17b53cb5"
+        }
+    ]
+}

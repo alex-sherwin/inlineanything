@@ -1,0 +1,43 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PersonModel"
+    },
+    "id": "ExtBox1-ext-gen2260",
+    "designerId": "deb55c06-7646-4745-bcc2-a61210cd3d95",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field",
+                "name": "name",
+                "type": "string"
+            },
+            "designerId": "6d16073b-3ec9-49d2-b599-48a06c80881b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field1",
+                "name": "age",
+                "type": "auto"
+            },
+            "designerId": "417515d9-3d39-4350-9c49-07d8af9aa729"
+        }
+    ]
+}

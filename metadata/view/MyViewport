@@ -1,0 +1,44 @@
+{
+    "type": "viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "MyViewport",
+        "designer|initialView": true,
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen2012",
+    "designerId": "f5c3d671-f1cf-4623-a0d3-f892a60cc07e",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "designerId": "7cb13fa8-8ea8-4d42-a969-a852096ba2ba",
+            "masterInstanceId": "ExtBox1-ext-gen3131"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "designerId": "c5934846-f782-4290-8d17-06b16213af80",
+            "masterInstanceId": "ExtBox1-ext-gen8689"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "basePath": "https://extjs.cachefly.net/ext-4.1.1-gpl/",
+        "debug": true
+    },
+    "id": "ExtBox1-ext-gen1589",
+    "designerId": "5addc7d3-f35d-4ebe-b9d9-2ac8a1fe20dd"
+}

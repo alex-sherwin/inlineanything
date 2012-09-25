@@ -1,0 +1,45 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "PersonModel"
+        ],
+        "stores": [
+            "MyJsonTreeStore",
+            "MyJsonStore"
+        ],
+        "views": [
+            "MyViewport",
+            "TreeGrid",
+            "MyGridPanel"
+        ],
+        "autoCreateViewport": true,
+        "name": "MyApp"
+    },
+    "id": "ExtBox1-ext-gen1581",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "Loader41",
+                "designer|displayName": "Four59Cool",
+                "enabled": true,
+                "paths": [
+                    "{\"Four59Cool.ux\":\"ux\"}"
+                ]
+            },
+            "designerId": "2243c1ee-a05c-4ace-8632-cb88add0ab79"
+        }
+    ]
+}

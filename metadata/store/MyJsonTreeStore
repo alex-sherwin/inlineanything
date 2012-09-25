@@ -1,0 +1,44 @@
+{
+    "type": "treestore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyJsonTreeStore",
+        "storeId": "MyJsonTreeStore",
+        "model": "PersonModel"
+    },
+    "id": "ExtBox1-ext-gen2604",
+    "designerId": "6d0b7993-791f-4b81-99cc-f61e63f45c71",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy",
+                "url": "data/tree.json"
+            },
+            "designerId": "b58ee18d-9e94-43d9-bb42-f85d6ca647f3",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader"
+                    },
+                    "designerId": "296d2d98-aa58-4602-811d-1d7fea6c6397"
+                }
+            ]
+        }
+    ]
+}

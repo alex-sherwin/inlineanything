@@ -1,0 +1,60 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyGridPanel",
+        "designer|userAlias": "mygridpanel",
+        "title": "My Grid Panel",
+        "store": "MyJsonStore"
+    },
+    "id": "ExtBox1-ext-gen8689",
+    "designerId": "23bcdb81-3132-4ef1-a662-7d2202510568",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView"
+            },
+            "designerId": "7e66ff8a-252f-4fee-b71e-4b57a60114d4"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn2",
+                "dataIndex": "name",
+                "flex": 1,
+                "text": "Name"
+            },
+            "designerId": "0a108875-5d58-4a3f-8676-e11c798106c0"
+        },
+        {
+            "type": "numbercolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyNumberColumn1",
+                "dataIndex": "age",
+                "flex": 1,
+                "text": "Age"
+            },
+            "designerId": "e6bbe60d-7bdf-4847-b84a-69031333ffb7"
+        }
+    ]
+}

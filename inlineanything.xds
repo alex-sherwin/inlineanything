@@ -1,0 +1,94 @@
+{
+    "name": "inlineanything",
+    "settings": {
+        "urlPrefix": "http://localhost/inlineanything",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 633,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "5addc7d3-f35d-4ebe-b9d9-2ac8a1fe20dd": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "f5c3d671-f1cf-4623-a0d3-f892a60cc07e": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "deb55c06-7646-4745-bcc2-a61210cd3d95": {
+            "paths": [
+                "metadata/model/PersonModel",
+                "app/model/override/PersonModel.js",
+                "app/model/PersonModel.js"
+            ],
+            "className": "PersonModel"
+        },
+        "6d0b7993-791f-4b81-99cc-f61e63f45c71": {
+            "paths": [
+                "metadata/store/MyJsonTreeStore",
+                "app/store/override/MyJsonTreeStore.js",
+                "app/store/MyJsonTreeStore.js"
+            ],
+            "className": "MyJsonTreeStore"
+        },
+        "c8a65774-25d3-4c05-a26c-68b6c0a65bdf": {
+            "paths": [
+                "metadata/view/TreeGrid",
+                "app/view/override/TreeGrid.js",
+                "app/view/TreeGrid.js"
+            ],
+            "className": "TreeGrid"
+        },
+        "23bcdb81-3132-4ef1-a662-7d2202510568": {
+            "paths": [
+                "metadata/view/MyGridPanel",
+                "app/view/override/MyGridPanel.js",
+                "app/view/MyGridPanel.js"
+            ],
+            "className": "MyGridPanel"
+        },
+        "55284725-3fbc-4585-85fa-b364221f7b96": {
+            "paths": [
+                "metadata/store/MyJsonStore",
+                "app/store/override/MyJsonStore.js",
+                "app/store/MyJsonStore.js"
+            ],
+            "className": "MyJsonStore"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "f5c3d671-f1cf-4623-a0d3-f892a60cc07e",
+            "c8a65774-25d3-4c05-a26c-68b6c0a65bdf",
+            "23bcdb81-3132-4ef1-a662-7d2202510568"
+        ],
+        "store": [
+            "6d0b7993-791f-4b81-99cc-f61e63f45c71",
+            "55284725-3fbc-4585-85fa-b364221f7b96"
+        ],
+        "controller": [],
+        "model": [
+            "deb55c06-7646-4745-bcc2-a61210cd3d95"
+        ],
+        "resource": [
+            "5addc7d3-f35d-4ebe-b9d9-2ac8a1fe20dd"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
