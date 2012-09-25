@@ -1,0 +1,17 @@
+===========
+INFORMATION
+===========
+
+Inline Anything ExtJS Grid & TreeGrid Plugin
+
+Author:             Alex Sherwin
+Target Platform:    ExtJS 4.1.x
+Target Components:  Ext.grid.Panel, Ext.tree.Panel (treegrid variant)
+Website:            https://github.com/alex-sherwin/inlineanything
+
+=======
+LICENSE
+=======
+
+Licensed under Apache 2.0, see LICENSE file or http://www.apache.org/licenses/LICENSE-2.0.txt for full text
+
