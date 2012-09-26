@@ -13,7 +13,9 @@
  *     floaterConfig: A Config object whose settings will be applied when creating instances of Four59Cool.ux.InlineAnythingFloater,
  *                    supported properties:
  *
- *                                moveDuration: default is 125
+ *                                floaterMoveDuration: default is 150
+ *
+ *                                headerMoveDuration: default is 300
  *
  *                                position: Can be 'under' or 'over', default is 'under'
  *

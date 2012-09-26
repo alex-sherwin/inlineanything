@@ -5,8 +5,8 @@ Ext.define('MyApp.view.override.TreeGrid', {
         ptype: 'inlineanything',
         
         floaterConfig: {
-            moveDuration: 90,
-            position: 'under'
+            //moveDuration: 90,
+            //position: 'under'
         },
         
         inlineChecks: {

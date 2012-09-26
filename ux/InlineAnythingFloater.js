@@ -7,7 +7,8 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
     extend: 'Ext.panel.Panel',
     
     // configs
-    moveDuration: 125,
+    floaterMoveDuration: 150,
+    headerMoveDuration: 300,
     position: 'under',
 
     // settings
@@ -100,6 +101,73 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
             this.doReposition();
         }
     },
+    
+    destroyCloseButton: function() {
+        if (this.closeBtn) {
+            Ext.destroy(this.closeBtn);
+            delete this.closeBtn;
+        }
+    },
+    
+    renderCloseButton: function(closeBtnTop, closeBtnLeft) {
+        var me = this;
+        
+        if (this.closeBtn) {
+            this.destroyCloseButton();
+        }
+      
+        this.closeBtn = Ext.widget({
+            
+            xtype: 'container',
+            
+            // reuse existing tool button classes
+            autoEl: {
+                cls: 'x-tool x-tool-close',
+                'ext:qtip': 'Close'
+            },
+            
+            // relative positioning is required for positioning and proper layering
+            style: {
+                position: 'relative',
+                right: 10,
+                top: 5
+            },
+            
+            // existing tool buttons are 15x15
+            width: 15,
+            height: 15,
+            
+            // force render to the floater Element
+            renderTo: this.floatHeader.el,
+            
+            // force a spacer image to be drawn internally
+            items: [{
+                xtype: 'component',
+                autoEl: {
+                    tag: 'img',
+                    src: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+                }
+            }],
+            
+            // add the mouse over class, listener for close button click
+            listeners: {
+                afterrender: {
+                    single: true,
+                    fn: function(box) {
+                        var el = box.getEl();
+                        el.addClsOnOver('x-tool-close-over');
+                        el.on('click', function() {
+                            me.inlineAnythingPlugin.cancelEdit();
+                        },
+                        me);
+                    }
+                }
+            }
+        });
+        
+        this.closeBtn.el.setTop(closeBtnTop);
+        this.closeBtn.el.setLeft(closeBtnLeft);
+    },
 
     /**
      * Get or create (maintain) a Singleton reference to the header
@@ -133,54 +201,8 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
                 }
             });
             
-            this.closeBtn = Ext.widget({
-                
-                xtype: 'container',
-                
-                // reuse existing tool button classes
-                autoEl: {
-                    cls: 'x-tool x-tool-close',
-                    'ext:qtip': 'Close'
-                },
-                
-                // relative positioning is required for positioning and proper layering
-                style: {
-                    position: 'relative'
-                },
-                
-                // existing tool buttons are 15x15
-                width: 15,
-                height: 15,
-                
-                // force render to the floater Element
-                renderTo: this.floatHeader.el,
-                
-                // force a spacer image to be drawn internally
-                items: [{
-                    xtype: 'component',
-                    autoEl: {
-                        tag: 'img',
-                        src: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-                    }
-                }],
-                
-                // add the mouse over class, listener for close button click
-                listeners: {
-                    afterrender: {
-                        single: true,
-                        fn: function(box) {
-                            var el = box.getEl();
-                            el.addClsOnOver('x-tool-close-over');
-                            el.on('click', function() {
-                                me.cancelEdit();
-                            },
-                            me);
-                        }
-                    }
-                }
-            });
-            
         }
+        
         return this.floatHeader;
     },
     
@@ -212,6 +234,9 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         var anonymousInvalidateScrollbar = function() {
             me.el.scrollIntoView(grid.view.el, false);
         };
+        
+        // destroy the close button if it exists
+        this.destroyCloseButton();
        
         // position the Floater
         if (row && Ext.isElement(row.dom)) {
@@ -232,7 +257,7 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
                 to: {
                     y: floaterY
                 },
-                duration: this.moveDuration,
+                duration: this.floaterMoveDuration,
                 listeners: {
                     afteranimate: function() {
                         anonymousInvalidateScrollbar();
@@ -248,21 +273,34 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
                     }
                 }
             };
-            this.el.animate(ani);
             
+            // animate the Floater into position
+            this.el.animate(ani);
         }
         
-        // set the floater size
+        // set the floater width
         this.setWidth(floaterWidth);
         
-        // position the header display
-        header.el.setLeft(0 == this.lastColumn.x ? -1 : this.lastColumn.x);
-        header.setWidth(this.lastColumn.el.dom.scrollWidth);
-        header.el.setTop(-1 * header.el.dom.scrollHeight + 1);
+        var headerElTop = -1 * header.el.dom.scrollHeight + 1;
+        if (header.el.getTop() != headerElTop) {
+          header.el.setTop(headerElTop);
+        }
         
-        // position the header close button
-        this.closeBtn.el.setTop(0);
-        this.closeBtn.el.setLeft(header.getWidth() - 23);
+        // animate the header x and width position
+        var newHeaderLeft = 0 == this.lastColumn.x ? -1 : this.lastColumn.x;
+        header.animate({
+            to: {
+                x: newHeaderLeft,
+                width: this.lastColumn.el.dom.scrollWidth
+            },
+            duration: this.headerMoveDuration,
+            
+            listeners: {
+                afteranimate: function() {
+                    me.renderCloseButton(0, header.getWidth() - 23);
+                }
+            }
+        });
     },
 
     /**
