@@ -71,7 +71,8 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         view.el.dom.appendChild(this.el.dom);
 
         // find the new index (if it exists), and reposition; else hide the Floater (cancel the edit)
-        var idx = context.store.indexOf(this.context.record);
+        // null check is needed, observed this.context.store as being null when a floater is visible and a tree grid is sorted
+        var idx = (this.context && this.context.store) ? this.context.store.indexOf(this.context.record) : -1;
         if (this.context && idx >= 0) {
             this.context.row = view.getNode(idx);
             this.doReposition();
