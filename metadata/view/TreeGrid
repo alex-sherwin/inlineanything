@@ -19,7 +19,6 @@
     },
     "id": "ExtBox1-ext-gen3131",
     "designerId": "c8a65774-25d3-4c05-a26c-68b6c0a65bdf",
-    "iconCls": "icon-treegridpanel",
     "cn": [
         {
             "type": "treeview",

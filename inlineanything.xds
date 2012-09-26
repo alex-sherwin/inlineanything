@@ -9,7 +9,7 @@
         "cacheBust": false
     },
     "xdsVersion": "2.1.0",
-    "xdsBuild": 633,
+    "xdsBuild": 637,
     "schemaVersion": 1,
     "upgradeVersion": 210000000498,
     "framework": "ext41",
@@ -68,6 +68,12 @@
                 "app/store/MyJsonStore.js"
             ],
             "className": "MyJsonStore"
+        },
+        "4756f508-288a-424d-8211-903c19930fed": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
         }
     },
     "viewOrderMap": {
@@ -85,7 +91,8 @@
             "deb55c06-7646-4745-bcc2-a61210cd3d95"
         ],
         "resource": [
-            "5addc7d3-f35d-4ebe-b9d9-2ac8a1fe20dd"
+            "5addc7d3-f35d-4ebe-b9d9-2ac8a1fe20dd",
+            "4756f508-288a-424d-8211-903c19930fed"
         ],
         "app": [
             "application"

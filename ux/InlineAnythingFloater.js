@@ -146,6 +146,51 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         }
         return this.controlButtons;
     },
+
+    /**
+     * Get or create (maintain) a Singleton reference to a set of control buttons
+     */
+    createFloatHeader: function() {
+        // destroy any existing floatHeader
+        if (!this.floatHeader) {
+            this.floatHeader = new Ext.Container({
+                // rounded corners around control buttons
+                renderTpl: [
+                    '<div class="x-inlineanything-header-c"></div>',
+                    '<div class="x-inlineanything-header-t"></div>',
+                    '<div class="x-inlineanything-header-r"></div>',
+                    '<div class="x-inlineanything-header-b"></div>',
+                    '<div class="x-inlineanything-header-l"></div>',
+                    '{%this.renderContainer(out,values)%}'
+                ],
+                // width from configuration
+                width: 100,
+                renderTo: this.el,
+                baseCls: Ext.baseCSSPrefix + 'inlineanything-header', // reuse the grid row editor button style
+                // horizontal control button layout
+                layout: {
+                    type: 'hbox',
+                    align: 'middle'
+                },
+                // all buttons will be sized the same
+                defaults: {
+                    flex: 1,
+                    margins: '0 1 0 1'
+                },
+                items: [
+                // close button
+                //{
+                //    xtype: 'button',
+                //    scope: this.inlineAnythingPlugin,
+                //    handler: this.inlineAnythingPlugin.cancelEdit, // close the Floater
+                //    text: 'Header',
+                //    minWidth: Ext.panel.Panel.prototype.minButtonWidth
+                //}
+                ]
+            });
+        }
+        return this.floatHeader;
+    },
     
     /**
      * Safely reposition the Floater
@@ -168,6 +213,7 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         var me = this,
             row = this.context && Ext.get(this.context.row),
             btns = this.getOrCreateControlButtons(),
+            header = this.createFloatHeader(),
             grid = this.inlineAnythingPlugin.grid,
             floaterWidth = grid.headerCt.getFullWidth(),
             btnsElLeftPosition = ((Math.min(grid.getWidth(), floaterWidth)) - btns.getWidth()) / 2 + grid.view.el.dom.scrollLeft;
@@ -218,12 +264,21 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         
         this.setWidth(floaterWidth);
         btns.el.setLeft(btnsElLeftPosition);
+        
+        console.log("x: " + this.lastColumn.x + ", width: " + this.lastColumn.el.dom.scrollWidth);
+        
+        header.el.setLeft(0 == this.lastColumn.x ? -1 : this.lastColumn.x);
+        header.setWidth(this.lastColumn.el.dom.scrollWidth);
+        
+        header.el.setTop(-1 * header.el.dom.scrollHeight + 1);
     },
 
     /**
      * Override the default startEdit, nwo used to cleanup components and defer to createInlineComponent for creation
      */
     startEdit: function(record, column, inlineComponentFunc) {
+      
+        this.lastColumn = column;
       
         var grid = this.inlineAnythingPlugin.grid;
         
