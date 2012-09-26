@@ -7,8 +7,6 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
     extend: 'Ext.panel.Panel',
     
     // configs
-    controlButtonsWidth: 140,
-    closeButtonText: 'Close',
     moveDuration: 125,
     position: 'under',
 
@@ -104,53 +102,10 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
     },
 
     /**
-     * Get or create (maintain) a Singleton reference to a set of control buttons
+     * Get or create (maintain) a Singleton reference to the header
      */
-    getOrCreateControlButtons: function() {
-        // maintain a singleton reference to a set of control buttons
-        if (!this.controlButtons) {
-            this.controlButtons = new Ext.Container({
-                // rounded corners around control buttons
-                renderTpl: [
-                    '<div class="{baseCls}-ml"></div>',
-                    '<div class="{baseCls}-mr"></div>',
-                    '<div class="{baseCls}-bl"></div>',
-                    '<div class="{baseCls}-br"></div>',
-                    '<div class="{baseCls}-bc"></div>',
-                    '{%this.renderContainer(out,values)%}'
-                ],
-                // width from configuration
-                width: this.controlButtonsWidth,
-                renderTo: this.el,
-                baseCls: Ext.baseCSSPrefix + 'grid-row-editor-buttons', // reuse the grid row editor button style
-                // horizontal control button layout
-                layout: {
-                    type: 'hbox',
-                    align: 'middle'
-                },
-                // all buttons will be sized the same
-                defaults: {
-                    flex: 1,
-                    margins: '0 1 0 1'
-                },
-                items: [
-                // close button
-                {
-                    xtype: 'button',
-                    scope: this.inlineAnythingPlugin,
-                    handler: this.inlineAnythingPlugin.cancelEdit, // close the Floater
-                    text: this.closeButtonText,
-                    minWidth: Ext.panel.Panel.prototype.minButtonWidth
-                }]
-            });
-        }
-        return this.controlButtons;
-    },
-
-    /**
-     * Get or create (maintain) a Singleton reference to a set of control buttons
-     */
-    createFloatHeader: function() {
+    getFloatHeader: function() {
+        var me = this;
         // destroy any existing floatHeader
         if (!this.floatHeader) {
             this.floatHeader = new Ext.Container({
@@ -169,25 +124,62 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
                 baseCls: Ext.baseCSSPrefix + 'inlineanything-header', // reuse the grid row editor button style
                 // horizontal control button layout
                 layout: {
-                    type: 'hbox',
-                    align: 'middle'
+                    type: 'absolute'
                 },
                 // all buttons will be sized the same
                 defaults: {
                     flex: 1,
                     margins: '0 1 0 1'
-                },
-                items: [
-                // close button
-                //{
-                //    xtype: 'button',
-                //    scope: this.inlineAnythingPlugin,
-                //    handler: this.inlineAnythingPlugin.cancelEdit, // close the Floater
-                //    text: 'Header',
-                //    minWidth: Ext.panel.Panel.prototype.minButtonWidth
-                //}
-                ]
+                }
             });
+            
+            this.closeBtn = Ext.widget({
+                
+                xtype: 'container',
+                
+                // reuse existing tool button classes
+                autoEl: {
+                    cls: 'x-tool x-tool-close',
+                    'ext:qtip': 'Close'
+                },
+                
+                // relative positioning is required for positioning and proper layering
+                style: {
+                    position: 'relative'
+                },
+                
+                // existing tool buttons are 15x15
+                width: 15,
+                height: 15,
+                
+                // force render to the floater Element
+                renderTo: this.floatHeader.el,
+                
+                // force a spacer image to be drawn internally
+                items: [{
+                    xtype: 'component',
+                    autoEl: {
+                        tag: 'img',
+                        src: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+                    }
+                }],
+                
+                // add the mouse over class, listener for close button click
+                listeners: {
+                    afterrender: {
+                        single: true,
+                        fn: function(box) {
+                            var el = box.getEl();
+                            el.addClsOnOver('x-tool-close-over');
+                            el.on('click', function() {
+                                me.cancelEdit();
+                            },
+                            me);
+                        }
+                    }
+                }
+            });
+            
         }
         return this.floatHeader;
     },
@@ -212,15 +204,13 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
     doReposition: function() {
         var me = this,
             row = this.context && Ext.get(this.context.row),
-            btns = this.getOrCreateControlButtons(),
-            header = this.createFloatHeader(),
+            header = this.getFloatHeader(),
             grid = this.inlineAnythingPlugin.grid,
-            floaterWidth = grid.headerCt.getFullWidth(),
-            btnsElLeftPosition = ((Math.min(grid.getWidth(), floaterWidth)) - btns.getWidth()) / 2 + grid.view.el.dom.scrollLeft;
+            floaterWidth = grid.headerCt.getFullWidth();
 
-        // defined anonymously here to obtain a scoped reference to btns and grid
+        // defined anonymously here to obtain a scoped reference to geader and grid
         var anonymousInvalidateScrollbar = function() {
-            btns.el.scrollIntoView(grid.view.el, false);
+            me.el.scrollIntoView(grid.view.el, false);
         };
        
         // position the Floater
@@ -262,15 +252,17 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
             
         }
         
+        // set the floater size
         this.setWidth(floaterWidth);
-        btns.el.setLeft(btnsElLeftPosition);
         
-        console.log("x: " + this.lastColumn.x + ", width: " + this.lastColumn.el.dom.scrollWidth);
-        
+        // position the header display
         header.el.setLeft(0 == this.lastColumn.x ? -1 : this.lastColumn.x);
         header.setWidth(this.lastColumn.el.dom.scrollWidth);
-        
         header.el.setTop(-1 * header.el.dom.scrollHeight + 1);
+        
+        // position the header close button
+        this.closeBtn.el.setTop(0);
+        this.closeBtn.el.setLeft(header.getWidth() - 23);
     },
 
     /**

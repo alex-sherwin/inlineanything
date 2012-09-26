@@ -13,10 +13,6 @@
  *     floaterConfig: A Config object whose settings will be applied when creating instances of Four59Cool.ux.InlineAnythingFloater,
  *                    supported properties:
  *
- *                                controlButtonsWidth: default is 140
- *
- *                                closeButtonText: default is 'Close'
- *
  *                                moveDuration: default is 125
  *
  *                                position: Can be 'under' or 'over', default is 'under'

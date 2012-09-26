@@ -5,8 +5,6 @@ Ext.define('MyApp.view.override.TreeGrid', {
         ptype: 'inlineanything',
         
         floaterConfig: {
-            controlButtonsWidth: 140,
-            closeButtonText: 'Hide',
             moveDuration: 90,
             position: 'under'
         },
