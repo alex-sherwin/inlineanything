@@ -30,6 +30,46 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
             scope: this,
             show: this.maybeReposition
         });
+        
+        var grid = this.inlineAnythingPlugin.grid;
+        
+        grid.mon(grid.headerCt, {
+            scope: this,
+            columnresize: this.somethingChanged,
+            columnshow: this.somethingChanged,
+            columnmove: this.somethingChanged,
+            columnhide: this.onColumnHide
+        });
+        
+        grid.mon(grid, {
+            scope: this,
+            afteritemcollapse: this.somethingChanged,
+            afteritemexpand: this.somethingChanged
+        });
+    },
+    
+    onColumnHide: function(headerCt, column) {
+        if (this.lastColumn && this.lastColumn === column) {
+            this.inlineAnythingPlugin.cancelEdit();
+        } else {
+            this.somethingChanged();
+        }
+    },
+    
+    /**
+     * This event listener aggregates multiple column change events (resize, hide, show and move)
+     * into a single DelayedTask, such that something like a column delete, which triggers 2 or more
+     * events, will eventually only fire the DelayedTask function one time
+     */
+    somethingChanged: function() {       
+        if (this.colChangeTask) {
+            this.colChangeTask.cancel();
+        }
+        this.colChangeTask = new Ext.util.DelayedTask(function() {
+            this.doReposition();
+            delete this.colChangeTask;
+        }, this);
+        this.colChangeTask.delay(25);
     },
 
     /**
@@ -240,6 +280,7 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
        
         // position the Floater
         if (row && Ext.isElement(row.dom)) {
+          
             // scroll into viewable area
             row.scrollIntoView(grid.view.el, false);
             
@@ -287,15 +328,19 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         }
         
         // animate the header x and width position
-        var newHeaderLeft = 0 == this.lastColumn.x ? -1 : this.lastColumn.x;
+        var newHeaderX = 0 == this.lastColumn.x ? -1 : this.lastColumn.x;
+        var headerWidth = this.lastColumn.el.dom.scrollWidth;
         
-        // if the x position is not changing, the duration should be 0 to avoid a perceived flicker
-        var duration = newHeaderLeft == header.el.getXY()[0] ? 0 : this.headerMoveDuration;
+        var xChanged = newHeaderX != header.el.getXY()[0];
+        var widthChanged = header.getWidth() != headerWidth;
+        
+        // if the x position + width is not changing, the duration should be 0 to avoid a perceived flicker
+        var duration = xChanged || widthChanged ? this.headerMoveDuration : 0;
         
         header.animate({
             to: {
-                x: newHeaderLeft,
-                width: this.lastColumn.el.dom.scrollWidth
+                x: newHeaderX,
+                width: headerWidth
             },
             duration: duration,
             
