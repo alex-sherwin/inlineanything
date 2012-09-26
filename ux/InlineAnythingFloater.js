@@ -288,12 +288,16 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         
         // animate the header x and width position
         var newHeaderLeft = 0 == this.lastColumn.x ? -1 : this.lastColumn.x;
+        
+        // if the x position is not changing, the duration should be 0 to avoid a perceived flicker
+        var duration = newHeaderLeft == header.el.getXY()[0] ? 0 : this.headerMoveDuration;
+        
         header.animate({
             to: {
                 x: newHeaderLeft,
                 width: this.lastColumn.el.dom.scrollWidth
             },
-            duration: this.headerMoveDuration,
+            duration: duration,
             
             listeners: {
                 afteranimate: function() {
