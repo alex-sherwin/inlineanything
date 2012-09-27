@@ -45,26 +45,12 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyTreeColumn",
-                "dataIndex": "name",
-                "flex": 1,
-                "text": "Name"
+                "width": 100,
+                "dataIndex": "region",
+                "flex": null,
+                "text": "Region"
             },
             "designerId": "3ecf091a-08ea-4e66-bd35-203b4babaf0a"
-        },
-        {
-            "type": "gridcolumn",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyColumn",
-                "dataIndex": "age",
-                "flex": null,
-                "text": "Age"
-            },
-            "designerId": "b6c8c459-8f77-412c-9014-c2d8fd56c067"
         },
         {
             "type": "gridcolumn",
@@ -77,9 +63,70 @@
                 "designer|userClassName": "MyColumn1",
                 "dataIndex": "name",
                 "flex": 1,
-                "text": "MyColumn1"
+                "text": "Name"
             },
             "designerId": "4dd1402e-45c5-4a72-accb-3d0e17b53cb5"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn1",
+                "dataIndex": "email",
+                "flex": 1,
+                "text": "Email"
+            },
+            "designerId": "50e791bc-5c26-405b-9798-78698f8d1e3a"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn7",
+                "dataIndex": "city",
+                "flex": 1,
+                "text": "City"
+            },
+            "designerId": "1c5f6b17-8267-4fa4-a7f5-351447ac92ff"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn8",
+                "width": 75,
+                "dataIndex": "state",
+                "flex": null,
+                "text": "State"
+            },
+            "designerId": "5bfc0733-7335-4e50-adc4-b43ccada7c5d"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn9",
+                "width": 100,
+                "dataIndex": "phone",
+                "text": "Phone"
+            },
+            "designerId": "e7b8f3a7-6243-43d6-b3fa-1dbc5abd4fe1"
         }
     ]
 }

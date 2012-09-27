@@ -37,20 +37,39 @@ Ext.define('MyApp.view.TreeGrid', {
             columns: [
                 {
                     xtype: 'treecolumn',
+                    width: 100,
+                    dataIndex: 'region',
+                    text: 'Region'
+                },
+                {
+                    xtype: 'gridcolumn',
                     dataIndex: 'name',
                     flex: 1,
                     text: 'Name'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'age',
-                    text: 'Age'
+                    dataIndex: 'email',
+                    flex: 1,
+                    text: 'Email'
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'name',
+                    dataIndex: 'city',
                     flex: 1,
-                    text: 'MyColumn1'
+                    text: 'City'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 75,
+                    dataIndex: 'state',
+                    text: 'State'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 100,
+                    dataIndex: 'phone',
+                    text: 'Phone'
                 }
             ]
         });

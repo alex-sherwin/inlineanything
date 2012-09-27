@@ -42,19 +42,64 @@
             "designerId": "0a108875-5d58-4a3f-8676-e11c798106c0"
         },
         {
-            "type": "numbercolumn",
+            "type": "gridcolumn",
             "reference": {
                 "name": "columns",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyNumberColumn1",
-                "dataIndex": "age",
+                "designer|userClassName": "MyColumn4",
+                "dataIndex": "email",
                 "flex": 1,
-                "text": "Age"
+                "text": "Email"
             },
             "designerId": "e6bbe60d-7bdf-4847-b84a-69031333ffb7"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn6",
+                "dataIndex": "city",
+                "flex": 1,
+                "text": "City"
+            },
+            "designerId": "15e61d23-c2f0-4b0f-8c6c-78b18d74981e"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn3",
+                "width": 75,
+                "dataIndex": "state",
+                "text": "State"
+            },
+            "designerId": "d6d1b771-99ec-4f48-916b-abb40ac223da"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn5",
+                "width": 100,
+                "dataIndex": "phone",
+                "text": "Phone"
+            },
+            "designerId": "83601bde-ca33-4903-a8c7-246073b674cc"
         }
     ]
 }

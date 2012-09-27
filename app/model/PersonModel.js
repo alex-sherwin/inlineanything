@@ -22,8 +22,25 @@ Ext.define('MyApp.model.PersonModel', {
             type: 'string'
         },
         {
-            name: 'age',
-            type: 'auto'
+            name: 'email'
+        },
+        {
+            name: 'phone'
+        },
+        {
+            name: 'state'
+        },
+        {
+            name: 'country'
+        },
+        {
+            name: 'address'
+        },
+        {
+            name: 'city'
+        },
+        {
+            name: 'region'
         }
     ]
 });

@@ -39,10 +39,28 @@ Ext.define('MyApp.view.MyGridPanel', {
                     text: 'Name'
                 },
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'age',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'email',
                     flex: 1,
-                    text: 'Age'
+                    text: 'Email'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'city',
+                    flex: 1,
+                    text: 'City'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 75,
+                    dataIndex: 'state',
+                    text: 'State'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 100,
+                    dataIndex: 'phone',
+                    text: 'Phone'
                 }
             ]
         });

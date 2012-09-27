@@ -33,11 +33,88 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field1",
-                "name": "age",
-                "type": "auto"
+                "designer|userClassName": "field2",
+                "name": "email"
             },
-            "designerId": "417515d9-3d39-4350-9c49-07d8af9aa729"
+            "designerId": "80a898f8-bd22-43f1-aae6-cd07d9f0cc98"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field3",
+                "name": "phone"
+            },
+            "designerId": "098d82b4-28b5-4554-819e-83068f9d08ec"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field4",
+                "name": "state"
+            },
+            "designerId": "e5419e02-5de9-45a2-ba96-0545d3c2c300"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field5",
+                "name": "country"
+            },
+            "designerId": "9213db07-1bd4-4599-8acc-9f4d3bdc390c"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field6",
+                "name": "address"
+            },
+            "designerId": "0c30ef2e-4f5d-4a51-b956-1f448bec5dde"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field7",
+                "name": "city"
+            },
+            "designerId": "0348d8b2-354d-4ee8-9e8c-497647c944ec"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field1",
+                "name": "region"
+            },
+            "designerId": "06e1f251-ec95-40a5-a68e-e3f114bf0398"
         }
     ]
 }
