@@ -15,7 +15,16 @@ Ext.onReady(function () {
 
     Ext.define('TreeGridPerson', {
         extend: 'Ext.data.Model',
-        fields: ['name', 'email', 'address', 'city', 'state', 'country', 'phone', 'region']
+        fields: [ 
+            { name: 'name', type: 'auto', defaultValue: null }, 
+            { name: 'email', type: 'auto', defaultValue: null }, 
+            { name: 'address', type: 'auto', defaultValue: null }, 
+            { name: 'city', type: 'auto', defaultValue: null }, 
+            { name: 'state', type: 'auto', defaultValue: null }, 
+            { name: 'country', type: 'auto', defaultValue: null }, 
+            { name: 'phone', type: 'auto', defaultValue: null }, 
+            { name: 'region', type: 'auto', defaultValue: null }
+        ]
     });
 
     var store = Ext.create('Ext.data.TreeStore', {
@@ -89,7 +98,23 @@ Ext.onReady(function () {
             inlineChecks: {
 
                 state: function (ctx) {
-                    return ctx.value != 'AK';
+                    return null != ctx.record.data.state && ctx.value != 'AK';
+                },
+
+                email: function (ctx) {
+                    return null != ctx.record.data.email;
+                },
+
+                address: function (ctx) {
+                    return null != ctx.record.data.address;
+                },
+
+                city: function (ctx) {
+                    return null != ctx.record.data.city;
+                },
+
+                name: function (ctx) {
+                    return null != ctx.record.data.name;
                 },
                 
                 region: function(ctx) {
