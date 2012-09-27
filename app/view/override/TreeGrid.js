@@ -43,7 +43,7 @@ Ext.define('MyApp.view.override.TreeGrid', {
                 };
             },
 
-            age: function (record, column) {
+            state: function (record, column) {
 
                 return {
 
