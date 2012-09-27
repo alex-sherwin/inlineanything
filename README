@@ -7,7 +7,8 @@ Inline Anything ExtJS Grid & TreeGrid Plugin
 Author:             Alex Sherwin
 Target Platform:    ExtJS 4.1.x
 Target Components:  Ext.grid.Panel, Ext.tree.Panel (treegrid variant)
-Website:            https://github.com/alex-sherwin/inlineanything
+Demo Site:          http://alex-sherwin.github.com/inlineanything/
+GitHub Site:        https://github.com/alex-sherwin/inlineanything/
 
 =======
 LICENSE
