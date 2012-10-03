@@ -11,6 +11,8 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
     floaterMoveDuration: 150,
     headerMoveDuration: 300,
     position: 'under',
+    selectionMode: 'cell',
+    showCloseButton: true,
 
     // settings
     border: false,
@@ -275,9 +277,6 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         var anonymousInvalidateScrollbar = function() {
             me.el.scrollIntoView(grid.view.el, false);
         };
-        
-        // destroy the close button if it exists
-        this.destroyCloseButton();
        
         // position the Floater
         if (row && Ext.isElement(row.dom)) {
@@ -291,6 +290,15 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
             var floaterY = row.getXY()[1];  // obtain the target Y position this way so it works properly with various grid features, as opposed to offsetTop
             if (me.position == 'under') {
                  floaterY += rowHeight;
+            }
+            
+            if (this.el.getXY()[1] == floaterY && this.getWidth() == floaterWidth) {
+                return;
+            }
+        
+            // destroy the close button if it exists
+            if (me.showCloseButton) {
+                this.destroyCloseButton();
             }
 
             this.el.setLeft(0);
@@ -329,8 +337,14 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
         }
         
         // animate the header x and width position
-        var newHeaderLeft = 0 == this.lastColumn.x ? -1 : this.lastColumn.x;
-        var headerWidth = this.lastColumn.el.dom.scrollWidth;
+        var newHeaderLeft, headerWidth;
+        if (this.selectionMode == 'cell') {
+            newHeaderLeft = 0 == this.lastColumn.x ? -1 : this.lastColumn.x;
+            headerWidth = this.lastColumn.el.dom.scrollWidth;
+        } else { // row
+            newHeaderLeft = 1;
+            headerWidth = floaterWidth - 2;
+        }
         
         var xChanged = newHeaderLeft != header.el.getXY()[0];
         var widthChanged = header.getWidth() != headerWidth;
@@ -347,7 +361,9 @@ Ext.define('Four59Cool.ux.InlineAnythingFloater', {
             
             listeners: {
                 afteranimate: function() {
-                    me.renderCloseButton(0, header.getWidth() - 23);
+                    if (me.showCloseButton) {
+                        me.renderCloseButton(0, header.getWidth() - 23);
+                    }
                 }
             }
         });

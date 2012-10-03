@@ -19,6 +19,10 @@
  *
  *                                position: Can be 'under' or 'over', default is 'under'
  *
+ *                                selectionMode: default is 'cell', can also be 'row'
+ *
+ *                                showCloseButton: default is true
+ *
  *     inlineChecks: Config object of Functions named by Column dataIndex's.  Functions will be passed
  *                   an editing context object returned by Ext.grid.plugin.Editing.getEditingContext().
  *                   The functions defined should return true/false Booleans only, which will determine
@@ -148,6 +152,7 @@ Ext.define('Four59Cool.ux.InlineAnything', {
      * Create a floater instance, pass along configuration parameters from relevant  plugin config options
      */
     createFloater: function() {
+        var me = this;
         var localFloaterConfig = {
                 hidden: true,
                 gridColumns: this.grid.headerCt.getGridColumns(),
@@ -158,6 +163,12 @@ Ext.define('Four59Cool.ux.InlineAnything', {
             
         if (this.floaterConfig) {
             localFloaterConfig = Ext.applyIf(localFloaterConfig, this.floaterConfig);
+        }
+        
+        if (!this.grid.closeInlineAnything) {
+            this.grid.closeInlineAnything = function() {
+                me.cancelEdit();
+            };
         }
         
         return Ext.create('Four59Cool.ux.InlineAnythingFloater', localFloaterConfig);
