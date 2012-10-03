@@ -1,0 +1,336 @@
+{
+  "data" : [ {
+    "id" : 16,
+    "name" : "26590c772e061e27",
+    "features" : [ {
+      "id" : 17,
+      "name" : "green",
+      "precedence" : 1,
+      "rules" : [ "d83645eac19b7f13", "539ddfc9cec27c31" ],
+      "resources" : [ "3a1547395ae6052c", "a3e3cbecf71c836c", "588b818b2054040a" ]
+    }, {
+      "id" : 18,
+      "name" : "blue",
+      "precedence" : 1,
+      "rules" : [ "52694d238546a293", "a1923c51624af9c6" ],
+      "resources" : [ "5f80122ff9720d93", "afcf55601f60c558" ]
+    }, {
+      "id" : 21,
+      "name" : "magenta",
+      "precedence" : 1,
+      "rules" : [ "586f09e243056806" ],
+      "resources" : [ "de89ddc8334da1ad" ]
+    }, {
+      "id" : 29,
+      "name" : "burnt orange",
+      "precedence" : 1,
+      "rules" : [ "2851644cb6c8bb76" ],
+      "resources" : [ "c5dc16d1f37c838a" ]
+    }, {
+      "id" : 30,
+      "name" : "ferrari red",
+      "precedence" : 1,
+      "rules" : [ "45266a7765d21264" ],
+      "resources" : [ "d5fd1d2e95a740f6", "2e959cd26076a6a3", "d41513b9d9bca963" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 42,
+      "email" : "bernadette.cushenberry@test.drupton.com"
+    }, {
+      "id" : 43,
+      "email" : "june.cousino@test.drupton.com"
+    }, {
+      "id" : 41,
+      "email" : "linnie.tomes@test.drupton.com"
+    }, {
+      "id" : 40,
+      "email" : "michal.mashburn@test.drupton.com"
+    }, {
+      "id" : 44,
+      "email" : "stanley.burda@test.drupton.com"
+    } ]
+  }, {
+    "id" : 14,
+    "name" : "2cbca2bd07d22436",
+    "features" : [ {
+      "id" : 20,
+      "name" : "cyan",
+      "precedence" : 1,
+      "rules" : [ "f282610d9aab2b4c" ],
+      "resources" : [ "aa18970f1c213224" ]
+    }, {
+      "id" : 24,
+      "name" : "white",
+      "precedence" : 1,
+      "rules" : [ "e474aa18e4dcc014" ],
+      "resources" : [ "c9044323d0f3c30a", "14b6f611af0604f9" ]
+    }, {
+      "id" : 27,
+      "name" : "manilla",
+      "precedence" : 1,
+      "rules" : [ "80c8419ecef8d576", "2127196acdd4c1e1", "fbc453c7c8316af" ],
+      "resources" : [ "a7a89164e6ec14c7" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 39,
+      "email" : "danny.gosha@test.drupton.com"
+    }, {
+      "id" : 38,
+      "email" : "deena.maxey@test.drupton.com"
+    } ]
+  }, {
+    "id" : 22,
+    "name" : "323f7d8938a1d72",
+    "features" : [ {
+      "id" : 19,
+      "name" : "yellow",
+      "precedence" : 1,
+      "rules" : [ "a38d832e68cd31e5" ],
+      "resources" : [ "7a1471d94b151eae", "46872384eea768e5", "29045a6c29c5646f" ]
+    }, {
+      "id" : 27,
+      "name" : "manilla",
+      "precedence" : 1,
+      "rules" : [ "80c8419ecef8d576", "2127196acdd4c1e1", "fbc453c7c8316af" ],
+      "resources" : [ "a7a89164e6ec14c7" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 64,
+      "email" : "allegra.lile@test.drupton.com"
+    }, {
+      "id" : 65,
+      "email" : "georgene.curiel@test.drupton.com"
+    } ]
+  }, {
+    "id" : 19,
+    "name" : "71208816acab017",
+    "features" : [ {
+      "id" : 16,
+      "name" : "red",
+      "precedence" : 1,
+      "rules" : [ "b6c68aefd6e4c4d0" ],
+      "resources" : [ "aeb14cf61d3941ba" ]
+    }, {
+      "id" : 19,
+      "name" : "yellow",
+      "precedence" : 1,
+      "rules" : [ "a38d832e68cd31e5" ],
+      "resources" : [ "7a1471d94b151eae", "46872384eea768e5", "29045a6c29c5646f" ]
+    }, {
+      "id" : 24,
+      "name" : "white",
+      "precedence" : 1,
+      "rules" : [ "e474aa18e4dcc014" ],
+      "resources" : [ "c9044323d0f3c30a", "14b6f611af0604f9" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 56,
+      "email" : "candi.luper@test.drupton.com"
+    }, {
+      "id" : 55,
+      "email" : "ling.feltner@test.drupton.com"
+    }, {
+      "id" : 54,
+      "email" : "venus.harriss@test.drupton.com"
+    } ]
+  }, {
+    "id" : 17,
+    "name" : "8ba1b6a90b9a20f",
+    "features" : [ {
+      "id" : 22,
+      "name" : "pink",
+      "precedence" : 1,
+      "rules" : [ "a270616feb380a45" ],
+      "resources" : [ "e0f4f1e28a76682e" ]
+    }, {
+      "id" : 29,
+      "name" : "burnt orange",
+      "precedence" : 1,
+      "rules" : [ "2851644cb6c8bb76" ],
+      "resources" : [ "c5dc16d1f37c838a" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 45,
+      "email" : "janene.fortes@test.drupton.com"
+    }, {
+      "id" : 46,
+      "email" : "yvette.whigham@test.drupton.com"
+    } ]
+  }, {
+    "id" : 20,
+    "name" : "9b0bc225b4bfecfc",
+    "features" : [ {
+      "id" : 17,
+      "name" : "green",
+      "precedence" : 1,
+      "rules" : [ "d83645eac19b7f13", "539ddfc9cec27c31" ],
+      "resources" : [ "3a1547395ae6052c", "a3e3cbecf71c836c", "588b818b2054040a" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 57,
+      "email" : "diedre.craycraft@test.drupton.com"
+    }, {
+      "id" : 58,
+      "email" : "stella.bury@test.drupton.com"
+    } ]
+  }, {
+    "id" : 21,
+    "name" : "b2c97599931910c7",
+    "features" : [ {
+      "id" : 20,
+      "name" : "cyan",
+      "precedence" : 1,
+      "rules" : [ "f282610d9aab2b4c" ],
+      "resources" : [ "aa18970f1c213224" ]
+    }, {
+      "id" : 25,
+      "name" : "black",
+      "precedence" : 1,
+      "rules" : [ "11f327f2470c33a1" ],
+      "resources" : [ "9971aa9c4b32b9f", "45bfebb6f1e05ec3" ]
+    }, {
+      "id" : 26,
+      "name" : "fuscia",
+      "precedence" : 1,
+      "rules" : [ "c1b6bb40b724f8ee", "8d7eb107e395e14d", "2028fe07c0dfee53" ],
+      "resources" : [ "76db99aa520acb0b" ]
+    }, {
+      "id" : 29,
+      "name" : "burnt orange",
+      "precedence" : 1,
+      "rules" : [ "2851644cb6c8bb76" ],
+      "resources" : [ "c5dc16d1f37c838a" ]
+    }, {
+      "id" : 30,
+      "name" : "ferrari red",
+      "precedence" : 1,
+      "rules" : [ "45266a7765d21264" ],
+      "resources" : [ "d5fd1d2e95a740f6", "2e959cd26076a6a3", "d41513b9d9bca963" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 62,
+      "email" : "eddy.veith@test.drupton.com"
+    }, {
+      "id" : 59,
+      "email" : "georgine.munos@test.drupton.com"
+    }, {
+      "id" : 61,
+      "email" : "lucilla.freed@test.drupton.com"
+    }, {
+      "id" : 63,
+      "email" : "maisha.leverett@test.drupton.com"
+    }, {
+      "id" : 60,
+      "email" : "marci.farren@test.drupton.com"
+    } ]
+  }, {
+    "id" : 18,
+    "name" : "b3a6af3e09b898f0",
+    "features" : [ {
+      "id" : 30,
+      "name" : "ferrari red",
+      "precedence" : 1,
+      "rules" : [ "45266a7765d21264" ],
+      "resources" : [ "d5fd1d2e95a740f6", "2e959cd26076a6a3", "d41513b9d9bca963" ]
+    }, {
+      "id" : 25,
+      "name" : "black",
+      "precedence" : 1,
+      "rules" : [ "11f327f2470c33a1" ],
+      "resources" : [ "9971aa9c4b32b9f", "45bfebb6f1e05ec3" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 47,
+      "email" : "carletta.burgamy@test.drupton.com"
+    }, {
+      "id" : 48,
+      "email" : "gita.cushenberry@test.drupton.com"
+    }, {
+      "id" : 49,
+      "email" : "ileana.klingman@test.drupton.com"
+    }, {
+      "id" : 53,
+      "email" : "indira.falco@test.drupton.com"
+    }, {
+      "id" : 50,
+      "email" : "kimbery.mentzer@test.drupton.com"
+    }, {
+      "id" : 51,
+      "email" : "penney.groll@test.drupton.com"
+    }, {
+      "id" : 52,
+      "email" : "sheilah.verhoeven@test.drupton.com"
+    } ]
+  }, {
+    "id" : 15,
+    "name" : "c4295319c0b6e793",
+    "features" : [ {
+      "id" : 21,
+      "name" : "magenta",
+      "precedence" : 1,
+      "rules" : [ "586f09e243056806" ],
+      "resources" : [ "de89ddc8334da1ad" ]
+    } ],
+    "mailAccounts" : [ ]
+  }, {
+    "id" : 13,
+    "name" : "d252ac264c68271c",
+    "features" : [ {
+      "id" : 16,
+      "name" : "red",
+      "precedence" : 1,
+      "rules" : [ "b6c68aefd6e4c4d0" ],
+      "resources" : [ "aeb14cf61d3941ba" ]
+    }, {
+      "id" : 20,
+      "name" : "cyan",
+      "precedence" : 1,
+      "rules" : [ "f282610d9aab2b4c" ],
+      "resources" : [ "aa18970f1c213224" ]
+    }, {
+      "id" : 21,
+      "name" : "magenta",
+      "precedence" : 1,
+      "rules" : [ "586f09e243056806" ],
+      "resources" : [ "de89ddc8334da1ad" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 35,
+      "email" : "katheryn.kinlaw@test.drupton.com"
+    }, {
+      "id" : 36,
+      "email" : "latisha.stocks@test.drupton.com"
+    }, {
+      "id" : 37,
+      "email" : "terresa.radice@test.drupton.com"
+    } ]
+  }, {
+    "id" : 12,
+    "name" : "e273d3b1ae2a6f90",
+    "features" : [ {
+      "id" : 16,
+      "name" : "red",
+      "precedence" : 1,
+      "rules" : [ "b6c68aefd6e4c4d0" ],
+      "resources" : [ "aeb14cf61d3941ba" ]
+    }, {
+      "id" : 20,
+      "name" : "cyan",
+      "precedence" : 1,
+      "rules" : [ "f282610d9aab2b4c" ],
+      "resources" : [ "aa18970f1c213224" ]
+    }, {
+      "id" : 21,
+      "name" : "magenta",
+      "precedence" : 1,
+      "rules" : [ "586f09e243056806" ],
+      "resources" : [ "de89ddc8334da1ad" ]
+    } ],
+    "mailAccounts" : [ {
+      "id" : 34,
+      "email" : "corene.wyss@test.drupton.com"
+    } ]
+  } ],
+  "total" : 11,
+  "success" : true
+}
