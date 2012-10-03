@@ -1,3 +1,5 @@
+Ext.data.JsonP.callback1(
+
 {
   "data" : [ {
     "id" : 16,
@@ -334,3 +336,5 @@
   "total" : 11,
   "success" : true
 }
+
+);
